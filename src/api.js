@@ -38,5 +38,9 @@ console.log(currentDate, lastYear, nextYear)
 
 // Popular Games
 const popularGames = `/games?key=${apiKey}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`
+const upcomingGames = `/games?key=${apiKey}&dates=${currentDate},${nextYear}&ordering=-added&page_size=10`
+const newGames = `/games?key=${apiKey}&dates=${lastYear},${currentDate}&ordering=-released&page_size=10`
 
 export const popularGamesURL = () => `${baseURL}${popularGames}`
+export const upcomingGamesURL = () => `${baseURL}${upcomingGames}`
+export const newGamesURL = () => `${baseURL}${newGames}`
