@@ -9,7 +9,6 @@ import { loadGames } from "../actions/gameAction";
 const GameDetail = () => {
     const {screen, game, isLoading} = useSelector((state) => state.detail)
 
-
     return (
         <>
         {!isLoading && (
