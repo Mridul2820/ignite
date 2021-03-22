@@ -3,7 +3,7 @@ const initState = {
         platforms: []
     },
     screen: {
-        screen: []
+        results: []
     },
     isLoading: true
 }

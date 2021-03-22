@@ -10,9 +10,10 @@ import { useDispatch } from "react-redux";
 import { loadDetail } from "../actions/detailAction";
 
 const Game = ({ name, released, image, id }) => {
-    // Load Details
+    // Load Detail handler
     const dispatch = useDispatch()
     const loadDetailHandler = () => {
+        document.body.style.overflow = 'hidden'
         dispatch(loadDetail(id))
     }
 

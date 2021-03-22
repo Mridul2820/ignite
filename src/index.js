@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 // Redux Setup
 import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from './reducers'
-import provider, { Provider } from 'react-redux'
+import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
