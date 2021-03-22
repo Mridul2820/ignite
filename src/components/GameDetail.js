@@ -6,6 +6,8 @@ import styled from 'styled-components'
 import { motion } from "framer-motion";
 // Redux
 import { useSelector } from "react-redux";
+// Utils
+import { smallImage } from "../utils";
 
 const GameDetail = () => {
     const history = useHistory()
@@ -42,14 +44,20 @@ const GameDetail = () => {
                     </StyledInfo>
                 </StyledStat>
                 <StyledMedia>
-                    <img src={game.background_image} alt={game.name}/>
+                    <img 
+                    src={smallImage(game.background_image, 1280)} 
+                    alt={game.name}/>
                 </StyledMedia>
                 <StyledDescription>
                     <p>{game.description_raw}</p>
                 </StyledDescription>
                 <div className="gallery">
                     {screen.map(shot => (
-                        <img key={shot.id} src={shot.image} alt="screnshot"/>
+                        <img 
+                            key={shot.id} 
+                            src={smallImage(shot.image, 1280)} 
+                            alt="screnshot"
+                        />
                     ))}
                 </div>
             </StyledDetail>
