@@ -75,6 +75,10 @@ const Home = () => {
 const StyledGameList = styled(motion.div)`
     padding: 0rem 5rem;
 
+    @media (max-width: 600px) {
+        padding: 0rem 2rem;
+    }
+
     h2 {
         padding: 2rem 0rem;
     }
@@ -85,6 +89,10 @@ const StyledGames = styled(motion.div)`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 3rem 2rem;
+
+    @media (max-width: 600px) {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 `
 
 export default Home

@@ -26,6 +26,10 @@ const GlobalStyles = createGlobalStyle`
         color: #ff7676;
         font-family: 'Indie Flower', cursive;
         /* font-family: 'Pacifico', cursive; */
+
+        @media (max-width: 600px) {
+            font-size: 2rem;
+        }
     }
 
     h3 {
