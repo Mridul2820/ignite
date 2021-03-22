@@ -7,10 +7,12 @@ import { useSelector } from "react-redux";
 import { loadGames } from "../actions/gameAction";
 
 const GameDetail = () => {
-    const {screen, game} = useSelector((state) => state.detail)
+    const {screen, game, isLoading} = useSelector((state) => state.detail)
 
 
     return (
+        <>
+        {!isLoading && (
         <StyledCardShadow>
             <StyledDetail>
                 <StyledStat>
@@ -40,6 +42,8 @@ const GameDetail = () => {
                 </div>
             </StyledDetail>
         </StyledCardShadow>
+        )}
+        </>
     )
 }
 
