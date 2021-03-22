@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 // Utils
 import { smallImage } from "../utils";
 
-const GameDetail = () => {
+const GameDetail = ({ pathID }) => {
     const history = useHistory()
 
     // Exit Detail
@@ -28,10 +28,10 @@ const GameDetail = () => {
         <>
         {!isLoading && (
         <StyledCardShadow className="shadow" onClick={exitDetailHandler}>
-            <StyledDetail>
+            <StyledDetail layoutId={pathID}>
                 <StyledStat>
                     <div className="rating">
-                        <h3>{game.name} </h3>
+                        <motion.h3 layoutId={`title ${pathID}`}>{game.name} </motion.h3>
                         <p>Rating : {game.rating} </p>
                     </div>
                     <StyledInfo>
@@ -44,9 +44,11 @@ const GameDetail = () => {
                     </StyledInfo>
                 </StyledStat>
                 <StyledMedia>
-                    <img 
-                    src={smallImage(game.background_image, 1280)} 
-                    alt={game.name}/>
+                    <motion.img 
+                        layoutId={`image ${pathID}`}
+                        src={smallImage(game.background_image, 1280)} 
+                        alt={game.name}
+                    />
                 </StyledMedia>
                 <StyledDescription>
                     <p>{game.description_raw}</p>
