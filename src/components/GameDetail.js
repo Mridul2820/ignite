@@ -4,10 +4,20 @@ import { useHistory } from "react-router-dom";
 // Styling & Animation
 import styled from 'styled-components'
 import { motion } from "framer-motion";
+
 // Redux
 import { useSelector } from "react-redux";
+
 // Utils
 import { smallImage } from "../utils";
+
+// Images Import
+import apple from '../img/apple.svg';
+import gamepad from '../img/gamepad.svg';
+import nintendo from '../img/nintendo.svg';
+import playstation from '../img/playstation.svg';
+import steam from '../img/steam.svg';
+import xbox from '../img/xbox.svg';
 
 const GameDetail = ({ pathID }) => {
     const history = useHistory()
@@ -18,6 +28,26 @@ const GameDetail = ({ pathID }) => {
         if(element.classList.contains('shadow')){
             document.body.style.overflow = 'auto'
             history.push('/')
+        }
+    }
+
+    // Get Platform images
+    const getPlatform = (platform) => {
+        switch(platform){
+            case 'PlayStation 4':
+                return playstation            
+            case 'PlayStation 5':
+                return playstation
+            case 'Xbox One':
+                return xbox
+            case 'PC':
+                return steam
+            case 'Nintendo Switch':
+                return nintendo
+            case 'iOS':
+                return apple
+            default :
+                return gamepad
         }
     }
 
@@ -38,7 +68,12 @@ const GameDetail = ({ pathID }) => {
                         <h3>Platforms</h3>
                         <StyledPlatforms>
                             {game.platforms.map(platform => (
-                                <h3 key={platform.platform.id} >{platform.platform.name}</h3>
+                                <img 
+                                    src={getPlatform(platform.platform.name)} 
+                                    alt={platform.platform.name}
+                                    key={platform.platform.id} 
+                                />
+
                             ))}
                         </StyledPlatforms>
                     </StyledInfo>
@@ -75,6 +110,7 @@ const StyledCardShadow = styled(motion.div)`
     overflow-y: scroll;
     background: rgba(0, 0, 0, .5);
     position: fixed;
+    z-index: 5;
     top: 0;
     left: 0;
 
@@ -99,6 +135,7 @@ const StyledDetail = styled(motion.div)`
     position: absolute;
     left: 10%;
     top: 5%;
+    z-index: 15;
     color: #000;
 
     img {
@@ -121,7 +158,7 @@ const StyledPlatforms = styled(motion.div)`
     justify-content: space-evenly;
 
     img {
-        margin-left: 3rem;
+        margin-left: 2.5rem;
     }
 `
 
