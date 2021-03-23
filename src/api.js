@@ -30,6 +30,7 @@ const currentYear = new Date().getFullYear()
 const currentMonth = getCurrentMonth()
 const currentDay = getCurrentDay()
 
+// Getting the current timespans
 const currentDate = `${currentYear}-${currentMonth}-${currentDay}`
 const lastYear = `${currentYear - 1}-${currentMonth}-${currentDay}`
 const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`
@@ -41,6 +42,7 @@ const upcomingGames = `games?key=${apiKey}&dates=${currentDate},${nextYear}&orde
 // New Games
 const newGames = `games?key=${apiKey}&dates=${lastYear},${currentDate}&ordering=-released&page_size=10`
 
+// Game URLs Export
 export const popularGamesURL = () => `${baseURL}${popularGames}`
 export const upcomingGamesURL = () => `${baseURL}${upcomingGames}`
 export const newGamesURL = () => `${baseURL}${newGames}`
@@ -50,3 +52,6 @@ export const gameDetailsURL = (game_id) => `${baseURL}games/${game_id}`
 
 // Game Screenshot URL
 export const gameScreenshotURL = (game_id) => `${baseURL}games/${game_id}/screenshots`
+
+// Search Games
+export const searchGameURL = (game_name) => `${baseURL}games?search=${game_name}&page_size=9`
