@@ -47,6 +47,7 @@ const Nav = () => {
                     value={textInput} 
                     onChange={inputHandler} 
                     type="text"
+                    placeholder="Search Games"
                 />
                 <button onClick={submitSearch} type="submit">Search</button>
             </form>
@@ -66,6 +67,14 @@ const StyledNav = styled(motion.div)`
     background-color: #fff;
     z-index: 100;
 
+    @media (max-width: 600px) {
+        padding: 1.5rem 2rem 2rem 2rem;
+    }
+
+    @media (max-width: 375px) {
+        padding: 1.5rem 1rem 2rem 1rem;
+    }
+
     input {
         width: 30%;
         font-size: 1.5rem;
@@ -74,16 +83,41 @@ const StyledNav = styled(motion.div)`
         outline: none;
         margin-top: 1rem;
         font-weight: bold;
+
+        @media (max-width: 1000px) {
+            width: 40%;
+        }
+
+        @media (max-width: 800px) {
+            width: 50%;
+        }
+
+        @media (max-width: 600px) {
+            width: calc(100% - 120px);
+        }
+
+        @media (max-width: 375px) {
+            width: calc(100% - 100px);
+        }
     }
 
     button {
         font-size: 1.5rem;
-        border: none;
         padding: .5rem 2rem;
         cursor: pointer;
         background: #ff7676;
         color: #fff;
         border: 3px solid #ff7676;
+
+        @media (max-width: 600px) {
+            padding: .5rem 1rem;
+            width: 120px;
+        }
+
+        @media (max-width: 375px) {
+            padding: .5rem;
+            width: 100px;
+        }
     }
 `
 
