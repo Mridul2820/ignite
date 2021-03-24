@@ -41,7 +41,7 @@ const Home = () => {
 
                 {searched.length ? (
                 <div className="searched">
-                    <h2>Searches Games</h2>
+                    <h2>Searched Games</h2>
                     <StyledGames>
                     {searched.map(game => (
                         <Game 

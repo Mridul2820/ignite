@@ -24,6 +24,8 @@ const Game = ({ name, released, image, id }) => {
     }
 
     return (
+        <>
+        {image && 
         <StyledGame 
             layoutId={stringPathId} 
             onClick={loadDetailHandler} 
@@ -37,6 +39,8 @@ const Game = ({ name, released, image, id }) => {
                 <motion.img layoutId={`image ${stringPathId}`} src={smallImage(image, 640)} alt={name}/> 
             </Link>
         </StyledGame>
+        }
+        </>
     )
 }
 
