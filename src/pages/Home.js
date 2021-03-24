@@ -12,6 +12,7 @@ import GameDetail from '../components/GameDetail'
 // Styling & Animation
 import styled from 'styled-components'
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
+import { fadeIn } from "../animation";
 
 const Home = () => {
     // Get the current Location
@@ -28,7 +29,11 @@ const Home = () => {
     const { popular, newGames, upcoming, searched } = useSelector((state => state.games))
 
     return (
-        <StyledGameList>
+        <StyledGameList
+            variants={fadeIn} 
+            initial="hidden"
+            animate="show"
+        >
             <AnimateSharedLayout>
                 <AnimatePresence>
                     {pathID && <GameDetail pathID={pathID} /> }

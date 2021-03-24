@@ -12,8 +12,8 @@ import GlobalStyles from './components/GlobalStyles'
 const App = () => {
     return (
         <div>
-
             <GlobalStyles />
+            
             <Nav />
             <Route path={['/game/:id', '/']}>
                 <Home />
