@@ -55,17 +55,24 @@ const Nav = () => {
 }
 
 const StyledNav = styled(motion.div)`
-    padding: 1.5rem 5rem;
+    padding: 1.5rem 5rem 2rem 5rem;
     text-align: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 100;
 
     input {
         width: 30%;
         font-size: 1.5rem;
         padding: .5rem;
-        border: none;
+        border: 3px solid #ff7676;
         outline: none;
         margin-top: 1rem;
-        box-shadow: 0px 0px 30px rgba(0, 0, 0, .2);
         font-weight: bold;
     }
 
@@ -76,6 +83,7 @@ const StyledNav = styled(motion.div)`
         cursor: pointer;
         background: #ff7676;
         color: #fff;
+        border: 3px solid #ff7676;
     }
 `
 
